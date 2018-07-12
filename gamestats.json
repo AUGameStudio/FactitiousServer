@@ -1,0 +1,50 @@
+{
+    "cancelled": {
+        "avg_correct": 1.2948855892690625, 
+        "num_plays": 69705, 
+        "avg_pct_score": 0.06874351433421398, 
+        "avg_time": 40.998063266623625, 
+        "is_completed": false, 
+        "avg_score": 10.311527150132703, 
+        "avg_pct_completed": 0.13668842502928616, 
+        "was_cancelled": true, 
+        "avg_completed": 2.0503263754393517, 
+        "avg_pct_correct": 0.08632570595125505
+    }, 
+    "inPlay": {
+        "avg_correct": 2.3333333333333335, 
+        "num_plays": 48, 
+        "avg_pct_score": 0.11666666666666668, 
+        "avg_time": 82.04166666666667, 
+        "is_completed": false, 
+        "avg_score": 17.5, 
+        "avg_pct_completed": 0.24305555555555555, 
+        "was_cancelled": false, 
+        "avg_completed": 3.6458333333333335, 
+        "avg_pct_correct": 0.15555555555555559
+    }, 
+    "completed": {
+        "avg_correct": 10.814422561187907, 
+        "num_plays": 212542, 
+        "avg_pct_score": 0.5235498552442642, 
+        "avg_time": 309.41733398575343, 
+        "is_completed": true, 
+        "avg_score": 78.53247828664452, 
+        "avg_pct_completed": 1.0014673178321625, 
+        "was_cancelled": false, 
+        "avg_completed": 15.02200976748125, 
+        "avg_pct_correct": 0.7209615040799061
+    }, 
+    "abandoned": {
+        "avg_correct": 2.7125908597209456, 
+        "num_plays": 179535, 
+        "avg_pct_score": 0.1371088645668594, 
+        "avg_time": 105.95659342189545, 
+        "is_completed": false, 
+        "avg_score": 20.566329685019635, 
+        "avg_pct_completed": 0.2703743931081703, 
+        "was_cancelled": false, 
+        "avg_completed": 4.055615896621829, 
+        "avg_pct_correct": 0.18083939064812687
+    }
+}

@@ -11,6 +11,36 @@ def getPks():
 	gs = json.loads(g.game_settings_json)
 	return sorted(sum((r['articleIds'] for r in gs['roundInfo']),[]))[::-1]
 
+def speedTest():
+	tot=0
+	n=0
+	for row in ArticlePlay.objects.all().filter(player_info__is_anonymous=False).iterator():
+		tot+=1
+		if row.player_info.gender=="F":n+=1
+		if tot%1000==0:print tot,n
+
+def trackImprovements():
+	print 'loading...'
+	with open('improvementPks.json') as f:
+		persons = sorted(json.load(f),key=lambda p:p['games'])
+	print 'loaded'	
+	tabs = {}
+	k=0
+	for p in persons:
+		numG = p['games']
+		k+=1
+		if k%1000==0:print k
+		if not numG in tabs:
+			R = range(numG)
+			tabs[numG]= {'totP':0, 'avg_score':[0.0 for _ in R], 'avg_time':[0.0 for _ in R]}
+			print 'numG',numG
+		d = tabs[numG]
+		for i,g in enumerate(GamePlay.objects.filter(player_info__pk=p['pk'],is_completed=True).values('total_score','total_time_seconds').order_by('pk')):
+			d['avg_score'][i] = (d['totP']*d['avg_score'][i]+g['total_score'])/(d['totP']+1.0)
+			d['avg_time'][i] = (d['totP']*d['avg_time'][i]+g['total_time_seconds'])/(d['totP']+1.0)
+		d['totP'] += 1
+	return tabs
+
 def articlePlayStats(start_date, end_date, articleList=None):
 	stats = Article.objects
 
