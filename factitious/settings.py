@@ -91,6 +91,7 @@ WSGI_APPLICATION = 'factitious.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -98,6 +99,19 @@ DATABASES = {
     }
 }
 
+
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'converted_data',
+        'USER': 'converter',
+        'PASSWORD': 'convert',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+'''
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
